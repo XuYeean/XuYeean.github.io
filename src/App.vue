@@ -1,29 +1,38 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+const orSo = ref("ToOther");
+watch(
+  () => route.path,
+  (val) => {
+    orSo.value = val == "/" ? "ToOther" : "ToHome";
+  }
+);
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <router-view v-slot="{ Component }">
+    <transition :name="orSo" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+.ToHome-enter-active,
+.ToOther-enter-active,
+.ToHome-leave-active,
+.ToOther-leave-active {
+  transition: all 0.24s ease;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.ToHome-leave-to,
+.ToOther-enter-from {
+  transform: translateX(-100%);
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.ToHome-enter-from,
+.ToOther-leave-to {
+  transform: translateX(100%);
 }
 </style>
