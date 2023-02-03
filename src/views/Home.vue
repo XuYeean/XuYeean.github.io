@@ -11,7 +11,7 @@ const to = (index) => {
   router.push({ path: `/${index}` });
 };
 const projectImg = computed(() => {
-  return (param) => "../public/" + param + ".png";
+  return (param) => `../assets/resources/${param}/${param}.png`;
 });
 </script>
 <template>
@@ -79,7 +79,7 @@ h1 {
 .picture {
   width: 100px;
   height: 100px;
-  background-image: url("../public/picture.png");
+  background-image: url("../picture.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
