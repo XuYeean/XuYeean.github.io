@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from "vue";
+const app = defineProps({
+  name: String,
+});
 let url = "https://hsuqnian.top/assets/resources/Notice/Notice";
 let [exeUrl, zipUrl] = [ref(""), ref("")];
 console.log(exeUrl, zipUrl);
