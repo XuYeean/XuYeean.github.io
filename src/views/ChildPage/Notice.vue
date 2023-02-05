@@ -4,12 +4,17 @@ const app = defineProps({
   name: String,
 });
 let url = "https://hsuqnian.top/assets/resources/Notice/Notice";
-let [exeUrl, zipUrl] = [ref(""), ref("")];
+let { exeUrl, zipUrl } = { exeUrl: ref(""), zipUrl: ref("") };
 console.log(exeUrl, zipUrl);
-fetch("https://hsuqnian.top/assets/resources/Notice/Notice.json")
+fetch(`${url}.json`, {
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+  },
+})
   .then((res) => res.text())
   .then((data) => {
     const json = JSON.parse(data);
+    console.log(json);
     exeUrl.value = `${url}-${json.version}.exe`;
     zipUrl.value = `${url}-${json.version}-win.zip`;
   });
