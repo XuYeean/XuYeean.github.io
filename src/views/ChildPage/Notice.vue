@@ -4,10 +4,10 @@ const app = defineProps({
   name: String,
 });
 let url =
-  "https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/Notice";
+  "https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/Notice/Notice";
 let exeUrl = ref("");
 let zipUrl = ref("");
-fetch(`${url}.json`)
+fetch(`https://hsuqnian.top/assets/resources/Notice/Notice.json`)
   .then((res) => res.text())
   .then((data) => {
     const json = JSON.parse(data);
