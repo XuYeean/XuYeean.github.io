@@ -3,16 +3,17 @@ import { ref } from "vue";
 const app = defineProps({
   name: String,
 });
-let url =
-  "https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/Notice/Notice";
+let url = ref("");
 let exeUrl = ref("");
 let zipUrl = ref("");
 fetch(`https://hsuqnian.top/assets/resources/Notice/Notice.json`)
   .then((res) => res.text())
   .then((data) => {
     const json = JSON.parse(data);
-    exeUrl.value = `${url}-${json.version}.exe`;
-    zipUrl.value = `${url}-${json.version}-win.zip`;
+    url.value = `https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/Noticev${json.version}/Notice`;
+
+    exeUrl.value = `${url.value}-${json.version}.exe`;
+    zipUrl.value = `${url.value}-${json.version}-win.zip`;
   });
 </script>
 <template>
