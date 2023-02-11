@@ -31,3 +31,11 @@ body {
   padding: 2rem;
   text-align: center;
 }
+a,
+a:active,
+a:hover,
+a:visited,
+a:link,
+a:focus {
+  text-decoration: none;
+}
