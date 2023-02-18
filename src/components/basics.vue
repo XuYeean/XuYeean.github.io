@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import back from "../components/back.vue";
+import back from "./back.vue";
 const app = defineProps({
   AppName: {
     type: String,
