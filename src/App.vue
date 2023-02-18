@@ -20,11 +20,13 @@ watch(
 </template>
 
 <style scoped>
+.ToHome-enter,
+.ToHome-leave,
 .ToHome-enter-active,
 .ToOther-enter-active,
 .ToHome-leave-active,
 .ToOther-leave-active {
-  transition: all 0.24s ease;
+  transition: all 0.36s ease;
 }
 
 .ToHome-leave-to,

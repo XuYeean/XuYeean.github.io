@@ -1,15 +1,14 @@
 <script setup>
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-const modules = import.meta.globEager("./ChildPage/*.vue");
+const modules = import.meta.globEager("../views/ChildPage/*.vue");
 const router = useRouter();
-
 let project = [];
 Object.keys(modules).map((key) => {
-  project.push(key.split("/")[2].split(".")[0]);
+  project.push(key.split("/").pop().split(".")[0]);
 });
 const to = (index) => {
-  router.push({ path: `/${index}` });
+  router.push({ path: index });
 };
 const projectImg = computed(() => {
   return (param) => `../assets/resources/${param}/${param}.png`;
@@ -81,10 +80,10 @@ const contact = (param) => {
         </div>
       </div>
     </div>
-    <div class="bottom">
+    <div class="AppList">
       <div
         v-for="index in project"
-        @click="to(index)"
+        @click="to(`/${index}`)"
         class="block"
         style="
           display: flex;
@@ -96,7 +95,7 @@ const contact = (param) => {
       >
         <img
           :src="projectImg(index)"
-          style="width: 100px; border-radius: 20px; margin-bottom: 80px"
+          style="width: 100px; border-radius: 20px; margin-bottom: 40px"
         />
         <div style="font-size: 3.6rem; font-weight: 100">{{ index }}</div>
       </div>
@@ -123,16 +122,17 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-.bottom {
+.AppList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 8%;
 }
 .block {
-  height: 280px;
+  height: 240px;
   background-color: #eaeef1;
   border-radius: 24px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  max-width: 240px;
 }
 .picture {
   width: 100px;
@@ -157,7 +157,7 @@ h1 {
   height: 200px;
   background-color: transparent;
   border-radius: 12px;
-  transition: all 0.24s;
+  transition: all 0.64s cubic-bezier(0.18, 0.89, 0.32, 1.12);
 }
 .information div:nth-child(1):after {
   pointer-events: none;
@@ -189,5 +189,20 @@ h1 {
 }
 .information div {
   cursor: pointer;
+}
+@media screen and (max-width: 1342px) {
+  .AppList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 940px) {
+  .AppList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .AppList {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>
