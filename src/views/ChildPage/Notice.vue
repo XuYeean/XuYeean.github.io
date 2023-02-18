@@ -11,7 +11,7 @@ fetch(`https://hsuqnian.top/assets/resources/${AppName}/${AppName}.json`)
   .then((res) => res.text())
   .then((data) => {
     const json = JSON.parse(data);
-    url.value = `https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/${AppName.value}v${json.version}/${AppName.value}`;
+    url.value = `https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/${AppName}v${json.version}/${AppName}`;
     WinUrl.value = `${url.value}-${json.version}.exe`;
     // MacUrl.value = `${url.value}-${json.version}.dmg`;
     version.value = json.version;
