@@ -10,7 +10,7 @@ watch(
     orSo.value = val == "/" ? "ToOther" : "ToHome";
   }
 );
-window.jsonLink = "https://hsuqnian.top/assets/resources/";
+window.assetLink = "https://hsuqnian.top/assets/resources/";
 window.downloadLink =
   "https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/";
 </script>

@@ -8,8 +8,8 @@ let WinUrl = ref("");
 // let MacUrl = ref("");
 let describe = ref("");
 let description = ref("");
-fetch(`${jsonLink}${AppName}/${AppName}.json`)
-// fetch(`../../../public/assets/resources/Notice/Notice.json`)
+fetch(`${assetLink}${AppName}/${AppName}.json`)
+  // fetch(`../../../public/assets/resources/Notice/Notice.json`)
   .then((res) => res.text())
   .then((data) => {
     const json = JSON.parse(data);
@@ -37,9 +37,7 @@ fetch(`${jsonLink}${AppName}/${AppName}.json`)
     <div class="describe">
       <div v-for="(item, index) in describe" :key="index">
         <img
-          :src="`../../../public/assets/resources/Notice/picture${
-            index + 1
-          }.png`"
+          :src="`${assetLink}assets/resources/Notice/picture${index + 1}.png`"
         />
         <div v-html="item"></div>
       </div>
