@@ -25,8 +25,8 @@ const backHome = () => {
   filter: blur(0);
 }
 .backHome:hover::before {
-  border-left: 2px solid #f6e6dc;
-  border-bottom: 2px solid #f6e6dc;
+  border-left: 2px solid var(--theme);
+  border-bottom: 2px solid var(--theme);
   transform: rotate(45deg);
 }
 .backHome::before {
@@ -35,8 +35,8 @@ const backHome = () => {
   width: 20px;
   height: 20px;
   transform: rotate(45deg) translateY(-4px);
-  border-left: 12px solid #f6e6dc;
-  border-bottom: 12px solid #f6e6dc;
+  border-left: 12px solid var(--theme);
+  border-bottom: 12px solid var(--theme);
   top: 16px;
   left: 12px;
   transition: all 0.24s ease-in-out;

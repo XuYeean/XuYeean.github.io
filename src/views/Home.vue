@@ -117,13 +117,14 @@ h1 {
 }
 
 .top {
-  height: 48vh;
+  margin-top: 24vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .AppList {
+  margin-top: 120px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 8%;
@@ -132,8 +133,8 @@ h1 {
   height: 280px;
   min-width: 148px;
   max-width: 280px;
-  background: rgba(234, 238, 241, 0.2);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
   border-radius: 24px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   max-width: 240px;

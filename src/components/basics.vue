@@ -13,13 +13,11 @@ let WinUrl = ref("");
 // let MacUrl = ref("");
 let description = ref("");
 
-fetch(
-  `https://hsuqnian.top/assets/resources/${AppName.value}/${AppName.value}.json`
-)
+fetch(`${window.jsonLink}/${AppName.value}/${AppName.value}.json`)
   .then((res) => res.text())
   .then((data) => {
     const json = JSON.parse(data);
-    url.value = `https://gitee.com/YeeanXu/XuYeean.github.io/releases/download/${AppName.value}v${json.version}/${AppName.value}`;
+    url.value = `${AppName.value}v${json.version}/${AppName.value}`;
     WinUrl.value = `${url.value}-${json.version}.exe`;
     // MacUrl.value = `${url.value}-${json.version}.dmg`;
     version.value = json.version;
