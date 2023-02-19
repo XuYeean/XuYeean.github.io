@@ -7,7 +7,7 @@ let version = ref("");
 let WinUrl = ref("");
 // let MacUrl = ref("");
 let describe = ref("");
-let assetLink = ref(window.jsonLink);
+let assetLink = ref(window.assetLink);
 let description = ref("");
 fetch(`${assetLink.value}${AppName}/${AppName}.json`)
   // fetch(`../../../public/assets/resources/Notice/Notice.json`)
