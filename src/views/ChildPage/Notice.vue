@@ -22,26 +22,26 @@ fetch(`https://hsuqnian.top/assets/resources/${AppName}/${AppName}.json`)
   <div>
     <back />
     <div class="Notice">
-      <h1>{{ AppName }}</h1>
-      <div>{{ version }}</div>
+      <h1 style="font-size: 4rem;">{{ AppName }}</h1>
+      <p>{{ description }}</p>
+      <div>当前版本 : {{ version }}</div>
       <div id="link">
         <a :href="WinUrl">Windows</a>
         <!-- <a :href="MacUrl">Mac</a> -->
       </div>
     </div>
-    <div class="describe">
-      <p>{{ description }}</p>
-    </div>
+    <div class="describe"></div>
   </div>
 </template>
 <style scoped>
 .Notice {
-  width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
 }
 #link {
   display: flex;

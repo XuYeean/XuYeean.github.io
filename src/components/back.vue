@@ -24,15 +24,21 @@ const backHome = () => {
   border-radius: 12px;
   filter: blur(0);
 }
+.backHome:hover::before {
+  border-left: 2px solid #f6e6dc;
+  border-bottom: 2px solid #f6e6dc;
+  transform: rotate(45deg);
+}
 .backHome::before {
   position: fixed;
   content: "";
   width: 20px;
   height: 20px;
-  transform: rotate(45deg);
-  border-left: 2px solid #000;
-  border-bottom: 2px solid #000;
-  top: 12px;
+  transform: rotate(45deg) translateY(-4px);
+  border-left: 12px solid #f6e6dc;
+  border-bottom: 12px solid #f6e6dc;
+  top: 16px;
   left: 12px;
+  transition: all 0.24s ease-in-out;
 }
 </style>
