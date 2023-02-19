@@ -7,8 +7,9 @@ let version = ref("");
 let WinUrl = ref("");
 // let MacUrl = ref("");
 let describe = ref("");
+let assetLink = ref(window.jsonLink);
 let description = ref("");
-fetch(`${assetLink}${AppName}/${AppName}.json`)
+fetch(`${assetLink.value}${AppName}/${AppName}.json`)
   // fetch(`../../../public/assets/resources/Notice/Notice.json`)
   .then((res) => res.text())
   .then((data) => {
@@ -36,11 +37,7 @@ fetch(`${assetLink}${AppName}/${AppName}.json`)
     </div>
     <div class="describe">
       <div v-for="(item, index) in describe" :key="index">
-        <img
-          :src="`${window.assetLink}Notice/picture${
-            index + 1
-          }.png`"
-        />
+        <img :src="`${assetLink}Notice/picture${index + 1}.png`" />
         <div v-html="item"></div>
       </div>
     </div>
