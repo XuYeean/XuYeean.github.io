@@ -37,7 +37,9 @@ fetch(`${assetLink}${AppName}/${AppName}.json`)
     <div class="describe">
       <div v-for="(item, index) in describe" :key="index">
         <img
-          :src="`${assetLink}assets/resources/Notice/picture${index + 1}.png`"
+          :src="`${window.assetLink}Notice/picture${
+            index + 1
+          }.png`"
         />
         <div v-html="item"></div>
       </div>
