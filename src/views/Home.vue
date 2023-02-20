@@ -60,7 +60,7 @@ const contact = (param) => {
             ></path>
           </svg>
         </div>
-        <div @click="contact('GITHUB')">
+        <div @click="contact('GITHUB')" class="github">
           <svg
             t="1676567596980"
             class="icon"
@@ -113,7 +113,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  min-height: 100%;
+  min-height: 100vh;
   overflow: scroll;
 }
 
@@ -156,7 +156,7 @@ h1 {
   margin-top: 24px;
   position: relative;
 }
-.information div::after {
+.information div:not(.github)::after {
   content: "";
   position: absolute;
   width: 200px;
