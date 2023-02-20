@@ -19,6 +19,9 @@ window.downloadLink =
   <transition name="back">
     <back v-if="route.path != '/'" />
   </transition>
+  <video id="backVideo" loop muted autoplay>
+    <source src="../public/back.mp4" type="video/mp4" />
+  </video>
   <router-view v-slot="{ Component }">
     <transition :name="orSo" mode="out-in">
       <component :is="Component" />
@@ -27,6 +30,14 @@ window.downloadLink =
 </template>
 
 <style scoped>
+#backVideo {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: -1;
+}
 .ToHome-enter,
 .ToHome-leave,
 .ToHome-enter-active,
