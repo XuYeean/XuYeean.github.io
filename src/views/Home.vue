@@ -113,7 +113,8 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  min-height: 100vh;
+  min-height: 100%;
+  overflow: scroll;
 }
 
 .top {

@@ -19,9 +19,9 @@ window.downloadLink =
   <transition name="back">
     <back v-if="route.path != '/'" />
   </transition>
-  <video id="backVideo" loop muted autoplay>
+  <!-- <video id="backVideo" loop muted autoplay>
     <source src="../public/back.webm" type="video/mp4" />
-  </video>
+  </video> -->
   <router-view v-slot="{ Component }">
     <transition :name="orSo" mode="out-in">
       <component :is="Component" />
@@ -31,7 +31,7 @@ window.downloadLink =
 
 <style scoped>
 #backVideo {
-  height: 100%;
+  width: auto;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
