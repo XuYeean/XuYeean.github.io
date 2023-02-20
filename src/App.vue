@@ -20,7 +20,7 @@ window.downloadLink =
     <back v-if="route.path != '/'" />
   </transition>
   <video id="backVideo" loop muted autoplay>
-    <source src="../public/back.mp4" type="video/mp4" />
+    <source src="../public/back.webm" type="video/mp4" />
   </video>
   <router-view v-slot="{ Component }">
     <transition :name="orSo" mode="out-in">
