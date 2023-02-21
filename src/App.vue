@@ -32,10 +32,13 @@ window.downloadLink =
 <style scoped>
 #backVideo {
   top: 0;
-  left: 50%;
+  left: 0;
   z-index: -1;
   position: absolute;
-  transform: translateX(-50%);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .ToHome-enter,
 .ToHome-leave,
@@ -65,31 +68,5 @@ window.downloadLink =
 .back-leave-to,
 .back-enter-from {
   transform: translateX(-200%);
-}
-@media screen and (min-width: 1252px) {
-  #backVideo {
-    width: auto;
-  }
-}
-@media screen and (min-width: 1252px) {
-  #backVideo {
-    height: auto;
-  }
-}
-@media screen and (max-height: 565px) {
-  #backVideo {
-    width: auto;
-  }
-}
-@media screen and (max-width: 940px) {
-  #backVideo {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #backVideo {
-    width: auto;
-  }
 }
 </style>
