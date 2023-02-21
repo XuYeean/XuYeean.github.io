@@ -31,11 +31,11 @@ window.downloadLink =
 
 <style scoped>
 #backVideo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   top: 0;
+  left: 50%;
   z-index: -1;
+  position: absolute;
+  transform: translateX(-50%);
 }
 .ToHome-enter,
 .ToHome-leave,
@@ -68,7 +68,7 @@ window.downloadLink =
 }
 @media screen and (min-width: 1252px) {
   #backVideo {
-    width: 100%;
+    width: auto;
   }
 }
 @media screen and (min-width: 1252px) {
