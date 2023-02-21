@@ -31,7 +31,7 @@ window.downloadLink =
 
 <style scoped>
 #backVideo {
-  height: auto;
+  height: 100%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -66,5 +66,26 @@ window.downloadLink =
 .back-leave-to,
 .back-enter-from {
   transform: translateX(-200%);
+}
+@media screen and (min-width: 1252px ) {
+  #backVideo {
+    height: auto;
+  }
+}
+@media screen and (max-height: 565px) {
+  #backVideo {
+    width: auto;
+  }
+}
+@media screen and (max-width: 940px) {
+  #backVideo {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #backVideo {
+    width: auto;
+  }
 }
 </style>

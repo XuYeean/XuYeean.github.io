@@ -19,7 +19,7 @@ const contact = (param) => {
 </script>
 <template>
   <div id="home">
-    <div class="top">
+    <div class="main">
       <div class="picture"></div>
       <h1>徐乔年</h1>
       <span>在校摆烂大学生</span>
@@ -79,26 +79,29 @@ const contact = (param) => {
           </svg>
         </div>
       </div>
+      <div style="position: absolute; bottom: 12px">软件</div>
     </div>
-    <div class="AppList">
-      <div
-        v-for="index in project"
-        :key="index"
-        @click="to(`/${index}`)"
-        class="block"
-        style="
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          padding: 0 40px;
-        "
-      >
-        <img
-          :src="projectImg(index)"
-          style="width: 100px; border-radius: 20px; margin-bottom: 40px"
-        />
-        <div style="font-size: 2.4rem; font-weight: 100">{{ index }}</div>
+    <div class="page">
+      <div class="AppList">
+        <div
+          v-for="index in project"
+          :key="index"
+          @click="to(`/${index}`)"
+          class="block"
+          style="
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 40px;
+          "
+        >
+          <img
+            :src="projectImg(index)"
+            style="width: 100px; border-radius: 20px; margin-bottom: 40px"
+          />
+          <div style="font-size: 2.4rem; font-weight: 100">{{ index }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -109,36 +112,42 @@ h1 {
 }
 
 #home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  min-height: 100vh;
+  height: 100vh;
   overflow: scroll;
+  scroll-snap-type: y mandatory;
 }
-
-.top {
-  margin-top: 24vh;
+#home > div {
+  scroll-snap-align: start;
+  height: 100vh;
+  align-items: center;
+}
+.main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  position: relative;
 }
 .AppList {
-  margin-top: 120px;
+  transition: all 0.64s cubic-bezier(0.18, 0.89, 0.32, 1.12);
+  width: 90vw;
+  margin: auto;
+  height: 80vh;
   display: grid;
+  overflow: scroll;
+  justify-items: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 8%;
+  grid-gap: 100px;
+  column-gap: 120px;
 }
+
 .block {
-  height: 280px;
-  min-width: 148px;
-  max-width: 280px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(24px);
   border-radius: 24px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  max-width: 240px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  break-inside: avoid;
+  min-height: 180px;
+  max-width: 120px;
 }
 .picture {
   width: 100px;
@@ -198,19 +207,29 @@ h1 {
 .information div {
   cursor: pointer;
 }
-@media screen and (max-width: 1342px) {
+.page {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
   .AppList {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 0;
+    margin-top: 48px;
+    height: 92vh;
+    width: 94vw;
   }
 }
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 800px) {
   .AppList {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 480px) {
-  .AppList {
-    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 72px;
+    column-gap: 0;
+    margin-top: 48px;
+    width: 88vw;
   }
 }
 </style>

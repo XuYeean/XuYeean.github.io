@@ -31,7 +31,7 @@ fetch(`${assetLink.value}${AppName}/${AppName}.json`)
       <div id="link">
         <a :href="WinUrl">Windows</a>
         <br />
-        <a :href="MacUrl">Mac</a>
+        <!-- <a :href="MacUrl">Mac</a> -->
       </div>
       <h4 style="position: absolute; bottom: 12px">下划了解更多</h4>
     </div>
@@ -48,11 +48,11 @@ fetch(`${assetLink.value}${AppName}/${AppName}.json`)
   height: 100vh;
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
-  overflow: scroll !important;
+  overflow: scroll;
   scroll-snap-type: y mandatory;
 }
 .introduce {
-  min-height: 100vh !important;
+  min-height: 100vh ;
   width: 100vw;
   display: flex;
   flex-direction: column;
