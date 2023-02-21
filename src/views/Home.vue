@@ -145,9 +145,10 @@ h1 {
   backdrop-filter: blur(24px);
   border-radius: 24px;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
-  break-inside: avoid;
+  max-height: 200px;
   min-height: 180px;
-  max-width: 120px;
+  max-width: 140px;
+  min-width: 120px;
 }
 .picture {
   width: 100px;
