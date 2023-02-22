@@ -142,14 +142,13 @@ h1 {
 
 .block {
   border-radius: 24px;
-  max-height: 240px;
-  min-height: 200px;
+  max-height: 280px;
+  min-height: 240px;
   max-width: 140px;
   min-width: 120px;
   position: relative;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.01);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
   margin-top: 50px;
   position: relative;
   overflow: hidden;
