@@ -147,8 +147,8 @@ h1 {
   max-width: 140px;
   min-width: 120px;
   position: relative;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
   margin-top: 50px;
   position: relative;
   overflow: hidden;
