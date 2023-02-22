@@ -35,7 +35,6 @@ window.downloadLink =
   left: 0;
   z-index: -1;
   position: absolute;
-  object-fit: cover;
   width: 100%;
   height: 100%;
   object-fit: cover;

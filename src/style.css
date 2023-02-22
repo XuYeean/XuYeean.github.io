@@ -1,5 +1,6 @@
 :root {
   --theme: rgb(246, 230, 220);
+  --gif: url(../public/back.gif);
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;

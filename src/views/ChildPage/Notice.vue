@@ -43,24 +43,26 @@ fetch(`${assetLink.value}${AppName}/${AppName}.json`)
     </div>
   </div>
 </template>
-<style scoped>
+<style scoped lang="less">
 .Notice {
-  height: 100vh;
   background: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+
   backdrop-filter: blur(4px);
   overflow: scroll;
   scroll-snap-type: y mandatory;
+  .introduce {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    position: relative;
+  }
 }
-.introduce {
-  min-height: 100vh ;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-  position: relative;
-}
+
 #link {
   display: flex;
   flex-direction: column;
@@ -76,7 +78,7 @@ fetch(`${assetLink.value}${AppName}/${AppName}.json`)
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: contrast(0.5);
+  backdrop-filter: contrast(1);
   border: 1px solid var(--theme);
   border-radius: 10px;
   scroll-snap-align: end;

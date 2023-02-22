@@ -19,7 +19,7 @@ const contact = (param) => {
 </script>
 <template>
   <div id="home">
-    <div class="main">
+    <div class="main" style="flex: 1">
       <div class="picture"></div>
       <h1>徐乔年</h1>
       <span>在校摆烂大学生</span>
@@ -81,32 +81,30 @@ const contact = (param) => {
       </div>
       <div style="position: absolute; bottom: 12px">软件</div>
     </div>
-    <div class="page">
-      <div class="AppList">
-        <div
-          v-for="index in project"
-          :key="index"
-          @click="to(`/${index}`)"
-          class="block"
-          style="
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 40px;
-          "
-        >
-          <img
-            :src="projectImg(index)"
-            style="width: 100px; border-radius: 20px; margin-bottom: 40px"
-          />
-          <div style="font-size: 2.4rem; font-weight: 100">{{ index }}</div>
-        </div>
+    <div class="AppList">
+      <div
+        v-for="index in project"
+        :key="index"
+        @click="to(`/${index}`)"
+        class="block"
+        style="
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 40px;
+        "
+      >
+        <img
+          :src="projectImg(index)"
+          style="width: 100px; border-radius: 20px; margin-bottom: 40px"
+        />
+        <div style="font-size: 2.4rem; font-weight: 100">{{ index }}</div>
       </div>
     </div>
   </div>
 </template>
-<style scoped>
+<style scoped lang="less">
 h1 {
   font-size: 3.2em;
 }
@@ -117,21 +115,23 @@ h1 {
   scroll-snap-type: y mandatory;
 }
 #home > div {
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   height: 100vh;
-  align-items: center;
+  width: 100vw;
 }
 .main {
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  align-items: center;
 }
 .AppList {
   transition: all 0.64s cubic-bezier(0.18, 0.89, 0.32, 1.12);
-  width: 90vw;
+  align-items: start;
   margin: auto;
-  height: 80vh;
+  height: 100vh;
   display: grid;
   overflow: scroll;
   justify-items: center;
@@ -141,14 +141,30 @@ h1 {
 }
 
 .block {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px);
   border-radius: 24px;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
-  max-height: 200px;
-  min-height: 180px;
+  max-height: 240px;
+  min-height: 200px;
   max-width: 140px;
   min-width: 120px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(8px);
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.block:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.36;
+  filter: blur(4px);
+  z-index: -1;
 }
 .picture {
   width: 100px;
@@ -195,7 +211,6 @@ h1 {
   border: 10px solid #29ad68;
   background-size: cover;
   pointer-events: none;
-
   opacity: 0;
   left: -20%;
   top: -1000%;
@@ -209,7 +224,6 @@ h1 {
   cursor: pointer;
 }
 .page {
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
