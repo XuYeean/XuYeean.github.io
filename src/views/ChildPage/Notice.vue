@@ -9,8 +9,8 @@ let WinUrl = ref("");
 let describe = ref("");
 let assetLink = ref(window.assetLink);
 let description = ref("");
-fetch(`${assetLink.value}${AppName}/${AppName}.json`)
-  // fetch(`../../../public/assets/resources/Notice/Notice.json`)
+// fetch(`${assetLink.value}${AppName}/${AppName}.json`)
+  fetch(`../../../public/assets/resources/Notice/Notice.json`)
   .then((res) => res.text())
   .then((data) => {
     const json = JSON.parse(data);
